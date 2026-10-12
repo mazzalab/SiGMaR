@@ -1,0 +1,13 @@
+sample_id,age,sex,tumor_stage,os_time_days,os_status
+SAMPLE_01,37,M,IV,2345,Deceased
+SAMPLE_02,51,M,III,1007,Deceased
+SAMPLE_03,60,M,III,1902,Deceased
+SAMPLE_04,39,M,IV,2336,Alive
+SAMPLE_05,39,M,III,572,Deceased
+SAMPLE_06,39,M,III,1197,Alive
+SAMPLE_07,63,F,I,2301,Deceased
+SAMPLE_08,77,M,II,1113,Alive
+SAMPLE_09,41,M,III,1184,Alive
+SAMPLE_10,80,F,II,1111,Deceased
+SAMPLE_11,51,M,I,1764,Deceased
+SAMPLE_12,37,M,III,565,Deceased

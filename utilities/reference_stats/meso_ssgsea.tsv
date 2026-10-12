@@ -1,0 +1,7 @@
+Set	mean	sd	scale
+Biphasic_DOWN	4538.1262911217	1132.64656483306	reference_universe
+Biphasic_UP	1075.4988463791	561.995375745313	reference_universe
+Epithelioid_DOWN	1129.39907826418	815.978186034273	reference_universe
+Epithelioid_UP	4601.85153002631	1301.52921293343	reference_universe
+Sarcomatoid_DOWN	4772.24352274049	1294.46659082953	reference_universe
+Sarcomatoid_UP	683.800680966674	858.995515766072	reference_universe

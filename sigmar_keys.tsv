@@ -1,0 +1,74 @@
+Tumour	TMP_Output	NON_TMP1	Consensus_OV	CMS	Name_Sigmar
+bladder	BLCA_1	"Ba.Sq;Ba/Sq;Basal_Squamous"			Basal_Squamous
+bladder	BLCA_2	LumP			LumP
+bladder	BLCA_3	LumU			LumU
+bladder	BLCA_4	"Stroma.rich;Stroma-rich;Stroma_rich"			Stroma_rich
+bladder	BLCA_5	LumNS			LumNS
+bladder	BLCA_6	"NE.like;NE-like;NE_like"			NE_like
+brca_pam50	BRCA_1	LumA			LumA
+brca_pam50	BRCA_2	LumB			LumB
+brca_pam50	BRCA_3	Basal			Basal
+brca_pam50	BRCA_4	Her2			Her2
+brca_pam50		Normal			Normal_like
+coad	COADREAD_1				CIN_and_Non_CIMP
+coad	COADREAD_2				CIN_and_CIMP_Low
+coad	COADREAD_3				GS_and_Non_CIMP_High
+coad	COADREAD_4				MSI_and_CIMP_High
+coad	COADREAD_5				MSI_and_Non_CIMP_High
+coad	COADREAD_6				MSS_and_CIMP_High
+coad		"TCGA.GA.centered.CMS1;TCGA.Agilent.centered.CMS1;EMTAB990.centered.CMS1;GSE39582.centered.CMS1;TCGA.HiSeq.centered.CMS1"		CMS1	CMS1
+coad		"TCGA.GA.centered.CMS2;TCGA.Agilent.centered.CMS2;EMTAB990.centered.CMS2;GSE39582.centered.CMS2;TCGA.HiSeq.centered.CMS2"		CMS2	CMS2
+coad		"TCGA.GA.centered.CMS3;TCGA.Agilent.centered.CMS3;EMTAB990.centered.CMS3;GSE39582.centered.CMS3;TCGA.HiSeq.centered.CMS3"		CMS3	CMS3
+coad		"TCGA.GA.centered.CMS4;TCGA.Agilent.centered.CMS4;EMTAB990.centered.CMS4;GSE39582.centered.CMS4;TCGA.HiSeq.centered.CMS4"		CMS4	CMS4
+hnscc	HNSC_1	Basal			Basal
+hnscc	HNSC_2	Mesenchymal			Mesenchymal
+hnscc	HNSC_3	Classical			Classical
+hnscc	HNSC_4	Atypical			Atypical
+hnscc	HNSC_5				HPV
+gbm	LGGGBM_1				G_CIMP_high
+gbm	LGGGBM_2				Mesenchymal_like
+gbm	LGGGBM_3				Codel
+gbm	LGGGBM_4				Classic_like
+gbm	LGGGBM_5				LGm6_GBM
+gbm	LGGGBM_6				PA_like
+gbm	LGGGBM_7				G_CIMP_low
+gbm		Proneural			Proneural
+gbm		Neural			Neural
+gbm		Classical			Classical
+gbm		Mesenchymal			Mesenchymal
+luad	LUAD_1				5
+luad	LUAD_2				4
+luad	LUAD_3				3
+luad	LUAD_4				2
+luad	LUAD_5				1
+luad		bronchioid			bronchioid
+luad		magnoid			magnoid
+luad		squamoid			squamoid
+lusc	LUSC_1				4
+lusc	LUSC_2				1
+lusc	LUSC_3				3
+lusc	LUSC_4				6
+lusc	LUSC_5				2
+lusc	LUSC_6				5
+lusc		primitive			primitive
+lusc		classical			classical
+lusc		secretory			secretory
+lusc		basal			basal
+meso	MESO_1				C4_S3
+meso	MESO_2				C1_S4
+meso	MESO_3				C3_S1
+meso	MESO_4				C2_S2
+meso		Epithelioid			Epithelioid
+meso		Biphasic			Biphasic
+meso		Sarcomatoid			Sarcomatoid
+ov	OV_1	Tothill C5/PRO	PRO		Proliferative
+ov	OV_2	Tothill C4/DIF	DIF		Differentiated
+ov	OV_3	Tothill C2/IMM	IMR		Immunoreactive
+ov	OV_4	Tothill C1/MES	MES		Mesenchymal
+pdac	PAAD_1				SNF_2
+pdac	PAAD_2				SNF_1
+pdac		"pure basal-like;basal-like"			basal-like
+pdac		"Immune classical;Pure classical;classical"			classical
+sarc	SARC_1	LMS			LMS
+sarc	SARC_2	MFS_UPS			MFS_UPS
+sarc	SARC_3	DDLPS			DDLPS

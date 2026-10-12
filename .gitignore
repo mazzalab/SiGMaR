@@ -1,0 +1,47 @@
+# OS / editor junk
+.DS_Store
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Runtime data, never in git
+uploads/
+Output/
+*.db
+*.log
+
+# Setup/uninstall scripts — not ready yet, excluded for now
+setup.sh
+setup.command
+setup_win.bat
+setup_win.ps1
+setup_win.sh
+uninstall.sh
+
+# Docs not ready yet, excluded for now
+DOCUMENTAZIONE_SCRIPT.md
+Guida_installazione_SiGMaR.docx
+Guida_installazione_SiGMaR.pdf
+GUIDA_UTENTE_SIGMAR.md
+Installation_Guide_SiGMaR.docx
+
+# Pre-built Docker images downloaded separately (see bin/README.md)
+bin/*
+!bin/README.md
+
+# Agentic tool state (claude-flow, ruflo, swarm) — never part of the project
+.claude/
+.claude-flow/
+.swarm/
+
+# Build artifacts / heavy data distributed separately via Zenodo
+Installer/
+*.deb
+*.zip
+*.7z
+Install*.app/
+utilities/gdan-tmp-models/*
+!utilities/gdan-tmp-models/README.md
+input/

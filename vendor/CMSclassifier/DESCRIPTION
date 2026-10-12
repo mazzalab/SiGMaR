@@ -1,0 +1,25 @@
+Package: CMSclassifier
+Type: Package
+Title: prediction of the Consensus Molecular Subtype (CMS) of
+        colorectal carcinomas based on log2_scaled Gene Expression
+        Profiles (GEP)
+Version: 1.0.0
+Author: Aurelien de Reynies, Justin Guinney
+Maintainer: Send questions to <reyniesa@ligue-cancer.net> and <justin.guinney@sagebase.org>
+Description: Labels colorectal samples with a "Consensus Molecular Subtype" (CMS) based on their GEP 
+Depends: randomForest
+License: GPL
+LazyData: true
+NeedsCompilation: no
+Packaged: 2026-05-26 14:10:26 UTC; root
+RemoteType: github
+RemoteHost: api.github.com
+RemoteRepo: CMSclassifier
+RemoteUsername: Sage-Bionetworks
+RemoteRef: HEAD
+RemoteSha: ba02ec5c88194e34c2a2b6a0c81bc07c36c8e9fa
+GithubRepo: CMSclassifier
+GithubUsername: Sage-Bionetworks
+GithubRef: HEAD
+GithubSHA1: ba02ec5c88194e34c2a2b6a0c81bc07c36c8e9fa
+Built: R 4.5.0; ; 2026-05-26 14:10:27 UTC; unix

@@ -1,0 +1,25 @@
+# Avoid packing large runtime artifacts into the image.
+bin/*.tar.gz
+uploads/
+utilities/gdan-tmp-models/
+*.dmg
+Install SiGMaR.app/
+test_data/
+salmon.merged.gene_counts.tsv
+sigmar_1.0_amd64.deb
+
+# Local caches and Python bytecode.
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+*.bak*
+
+# Research / manuscript material kept in the repo but not needed by the app.
+analysis_reference/
+docs_build/
+
+# Local agent / git metadata not needed in the image.
+.git/
+.agents/
+.codex/

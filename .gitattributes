@@ -1,0 +1,5 @@
+# Shell scripts run inside the Linux Docker containers - they must always
+# check out with LF line endings, even on Windows (where core.autocrlf=true
+# otherwise turns them into CRLF and breaks "set -euo pipefail" with
+# "invalid option name"). See scripts/run_all_models_docker.sh.
+*.sh text eol=lf

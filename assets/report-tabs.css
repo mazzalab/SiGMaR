@@ -1,0 +1,10 @@
+#report-tabs .nav-link,
+#report-tabs .nav-link:hover,
+#report-tabs .nav-link:focus,
+#report-tabs .nav-link.active {
+  color: #0f766e !important;
+}
+
+#report-tabs .nav-link.active {
+  font-weight: 700;
+}

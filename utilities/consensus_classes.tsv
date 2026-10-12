@@ -1,0 +1,15 @@
+Tumour	Token	Display
+luad	bronchioid	bronchioid
+luad	magnoid	magnoid
+luad	squamoid	squamoid
+lusc	basal	basal
+lusc	classical	classical
+lusc	primitive	primitive
+lusc	secretory	secretory
+pdac	basallike	basal-like
+pdac	classical	classical
+brca	basal	Basal
+brca	her2	Her2
+brca	luma	LumA
+brca	lumb	LumB
+brca	normal	Normal_like

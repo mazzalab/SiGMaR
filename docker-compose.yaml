@@ -1,0 +1,33 @@
+services:
+  sigmar-app:
+    platform: linux/amd64
+    image: sigmar-sigmar-app:latest
+    container_name: sigmar_container
+    ports:
+      - "8060:8060"
+    working_dir: ${PWD}
+    volumes:
+      # Whole home dir (not just the project folder) so the in-app output
+      # folder picker (layouts/layout_upload.py) can browse anywhere under
+      # it - Desktop, Documents, Downloads, etc, not just the project path.
+      - ${HOME}:${HOME}
+      # The project/working directory itself, in case it lives outside
+      # $HOME (e.g. the Linux .deb installs to /opt/sigmar) - without this,
+      # `working_dir: ${PWD}` below points at a path that doesn't exist
+      # inside the container at all when PWD isn't under $HOME. Harmless
+      # duplicate/nested mount when PWD already is under $HOME (macOS).
+      - ${PWD}:${PWD}
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - PYTHONUNBUFFERED=1
+      - HOST_PWD=${PWD}
+      # Real host filesystem path, used only when building --mount sources
+      # for the sibling model containers the TMP pipeline launches via
+      # cwltool (docker-outside-of-docker). On macOS/Linux this is the same
+      # value as HOST_PWD (the bind mount keeps host and container paths
+      # identical) - kept as a separate var so the value has one meaning
+      # everywhere, see docker-compose.win.yaml for why Windows needs it.
+      - HOST_MOUNT_ROOT=${PWD}
+    command: ["python", "main.py"]
+    restart: always
+  

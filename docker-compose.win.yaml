@@ -1,0 +1,51 @@
+services:
+  sigmar-app:
+    platform: linux/amd64
+    image: sigmar-sigmar-app:latest
+    container_name: sigmar_container
+    ports:
+      - "8060:8060"
+    working_dir: /app
+    volumes:
+      - .:/app
+      # The user's profile, mounted so the in-app output folder picker
+      # (layouts/layout_upload.py) can reach Desktop/Documents/Downloads.
+      # Target is the real host path in POSIX form (e.g. /c/Users/x - same
+      # /c/... trick as HOST_MOUNT_ROOT below), so what the picker shows
+      # actually matches the real Windows path instead of an arbitrary
+      # fixed name. Falls back to /host_home (the old fixed alias, still a
+      # perfectly working mount, just without the real-path label) if
+      # HOST_HOME is left unset by whatever calls `docker compose up`.
+      - ${USERPROFILE}:${HOST_HOME:-/host_home}
+      # Same project dir as the .:/app mount above, mounted a SECOND time at
+      # its own real host path in POSIX form (e.g. /c/Users/x/.../SiGMaR,
+      # NOT the /app path above). This is what makes the TMP pipeline's
+      # cwltool step work: cwltool (docker-outside-of-docker, see the
+      # docker.sock mount below) needs one path string that is BOTH (a) a
+      # path Python's os.path recognizes as absolute and can os.lstat() from
+      # inside this container, for cwltool's own internal file checks, AND
+      # (b) a string the real host Docker daemon resolves to the real
+      # Windows directory when cwltool uses it as a --mount source for the
+      # sibling model containers it launches. /app satisfies (a) but not
+      # (b); the native C:\Users\... form satisfies (b) but breaks (a)
+      # because Python's os.path is POSIX-only inside this Linux container
+      # and doesn't recognize a drive-letter path as absolute. The /c/...
+      # form (confirmed empirically - Docker Desktop's daemon accepts it as
+      # a mount source the same as the native form) satisfies both at once,
+      # exactly like ${HOME}:${HOME} does for real on macOS/Linux. See
+      # HOST_MOUNT_ROOT below - must be in this /c/... form, not win_path()'s
+      # backslash form.
+      - .:${HOST_MOUNT_ROOT:-/app}
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - PYTHONUNBUFFERED=1
+      - HOST_PWD=/app
+      # Real host path in POSIX form (e.g. /c/Users/x/.../SiGMaR - NOT
+      # win_path()'s C:\Users\... backslash form, see the volumes comment
+      # above for why). Must be exported by whatever calls `docker compose
+      # up` (setup_win.ps1 / setup_win.sh) - compose only passes it through
+      # and mounts on it here, it does not compute it. Falls back to /app
+      # (a harmless duplicate of the mount above) if left unset.
+      - HOST_MOUNT_ROOT=${HOST_MOUNT_ROOT:-/app}
+    command: ["python", "main.py"]
+    restart: always
